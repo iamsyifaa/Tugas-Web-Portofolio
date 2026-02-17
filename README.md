@@ -1,4 +1,4 @@
-# 📌 Langkah Pengumpulan Tugas Web via GitHub
+# 📌 Langkah Pengumpulan Tugas Web
 
 ## 1. Fork Repository
 - Buka link repository tugas dari aku.
