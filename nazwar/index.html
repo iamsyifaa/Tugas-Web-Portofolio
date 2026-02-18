@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Portofolio — Nazwar</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Portofolio.css">
+</head>
+<body>
+  <div class="emoji-bg" id="emojiContainer"></div>
+
+<div id="splash">
+  <div class="splash-inner card">
+    <div class="splash-title">Halo, Saya Nazwar</div>
+    <div class="splash-sub">Student PPLG • Future Web Developer • IT Enthusiast</div>
+    <button id="viewBtn" class="btn-primary">Lihat Portofolio</button>
+    <div style="margin-top:12px;color:var(--muted);font-size:13px">
+      Tekan tombol untuk melihat portofolio
+    </div>
+  </div>
+</div>
+
+<main class="container" id="mainContent">
+
+<div class="hero card" id="heroCard">
+  <div class="profile-pic">
+    <img src="img/profil.png" alt="Foto Profil">
+  </div>
+  <div class="hero-info">
+    <h1>Nazwarrrr</h1>
+    <p class="muted">Student PPLG</p>
+    <p style="margin-top:8px;color:var(--muted);font-size:14px">
+      Saya adalah siswa SMK di bidang Pengembangan Perangkat Lunak yang tertarik dengan dunia teknologi dan pemrograman web. Saya suka belajar hal baru, mencoba membuat proyek sendiri, dan terus meningkatkan kemampuan saya agar bisa menjadi developer yang handal di masa depan.
+    </p>
+  </div>
+</div>
+
+<div class="grid">
+
+<aside class="left">
+<div class="card">
+<h3 style="color:var(--accent)">Biodata</h3>
+<dl class="biodata">
+<dt>Nama</dt><dd>Nazwar Makarim Mahardhika</dd>
+<dt>Kelas</dt><dd>X PPLG 2</dd>
+<dt>Sekolah</dt><dd>SMKN 1 Garut</dd>
+<dt>Alamat</dt><dd>Garut, Jawa Barat</dd>
+<dt>Tanggal Lahir</dt><dd>16/11/2009</dd>
+</dl>
+
+<hr style="margin:12px 0;border:none;border-top:1px solid rgba(9,22,40,0.04)">
+
+<h3 style="color:var(--accent)">Kontak</h3>
+<div class="contacts">
+<a class="contact-link" href="mailto:nazwarmakarim818@gmail.com">Email</a>
+<a class="contact-link" href="https://www.instagram.com/nazwarrrr" target="_blank">Instagram</a>
+<a class="contact-link" href="https://github.com/Nazwarrr" target="_blank">GitHub</a>
+</div>
+</div>
+</aside>
+
+<section class="right">
+
+<div class="card section">
+<h3>Latar Belakang</h3>
+<p>Saya merupakan siswa jurusan PPLG yang memiliki minat besar dalam dunia teknologi dan pengembangan perangkat lunak. Saya tertarik belajar coding juga membuat game dan ingin mengembangkan kemampuan saya di bidang IT.</p>
+</div>
+
+<div class="card section">
+<h3>Minat dan Fokus</h3>
+<p>Minat saya berada di bidang Web Development, Backend Development, dan Game Development. Saat ini saya fokus mempelajari dasar pemrograman dan pengembangan website.</p>
+</div>
+
+<div class="card section">
+<h3>Tujuan Masuk IT Club</h3>
+<p>Tujuan saya masuk IT Club adalah untuk mengembangkan skill programming, memperluas relasi, serta mendapatkan pengalaman dalam mengerjakan project bersama tim.</p>
+</div>
+
+<div class="card section">
+<h3>Skills (cuma bisa bukan jago)</h3>
+<div class="skills">
+<span class="skill">HTML</span>
+<span class="skill">CSS</span>
+<span class="skill">JavaScript</span>
+<span class="skill">PHP</span>
+<span class="skill">MySQL</span>
+<span class="skill">Git</span>
+<span class="skill">GitHub</span>
+</div>
+</div>
+
+<div class="card section">
+<h3>Karya (masih dalam pengembangan)</h3>
+<p style="color:var(--muted);font-size:13px;margin-bottom:8px">
+Klik gambar untuk memperbesar
+</p>
+
+<div class="projects">
+
+<div class="proj-card">
+<img src="img/proj1.png" alt="Karya 1" onclick="openLightbox(this.src)">
+<div class="pinfo"><strong>Proyek Tim E-Perpus</strong></div>
+</div>
+
+<div class="proj-card">
+<img src="img/proj2.png" alt="Karya 2" onclick="openLightbox(this.src)">
+<div class="pinfo"><strong>Desain UI nya</strong></div>
+</div>
+
+</div>
+</div>
+
+</section>
+</div>
+</main>
+
+<div id="lightbox" style="position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,8,23,0.6);z-index:60">
+<img id="lightImg" style="max-width:90%;max-height:90%;border-radius:10px">
+</div>
+
+<script>
+const splash = document.getElementById('splash');
+const viewBtn = document.getElementById('viewBtn');
+const hero = document.getElementById('heroCard');
+
+viewBtn.onclick = ()=>{
+  splash.classList.add('hide');
+  setTimeout(()=>hero.classList.add('show'),400);
+};
+
+const lightbox = document.getElementById('lightbox');
+const lightImg = document.getElementById('lightImg');
+
+function openLightbox(src){
+  lightImg.src = src;
+  lightbox.style.display = 'flex';
+}
+
+lightbox.onclick = ()=> lightbox.style.display='none';
+
+</script>
+<footer class="footer">
+  <p>© 2026 Nazwar Makarim Mahardhika • Dibuat dengan HTML, CSS & JavaScript</p>
+</footer>
+<script>
+const emojis = ["💻","🚀","✨","🔥","🎯","⚡","🌟","📚","🧠","🎨"];
+
+const container = document.getElementById("emojiContainer");
+
+for(let i=0;i<20;i++){
+  const e = document.createElement("div");
+  e.className = "emoji";
+  e.innerText = emojis[Math.floor(Math.random()*emojis.length)];
+
+  e.style.left = Math.random()*100+"%";
+  e.style.top = Math.random()*100+"%";
+
+  // ukuran random
+  e.style.fontSize = (28 + Math.random()*28)+"px";
+
+  // durasi random (lebih cepat)
+  e.style.animationDuration = (6 + Math.random()*6)+"s";
+
+  container.appendChild(e);
+}
+</script>
+</body>
+</html>
